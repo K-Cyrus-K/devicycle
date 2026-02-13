@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&family=Kaisei+Tokumin:wght@400;500;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-gradient-main-tb: linear-gradient(
+    to bottom,
+    #eff6ff,
+    #d3e9ff,
+    #d7d7ff
+  );
+}
+
+@layer base {
+  * {
+    font-family: "Kaisei Tokumin", serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+}
+
+input {
+  font-family: inherit !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  font-family: inherit !important;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-box-shadow: 0 0 0 30px #f8fafc inset !important;
+  -webkit-text-fill-color: #1e293b !important;
+}
+
+*::-webkit-scrollbar {
+  width: 20px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 8px 0;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-image: var(--color-gradient-main-tb);
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+@layer components {
+  .nav-title {
+    font-weight: 900 !important;
+    font-size: 1.5rem !important;
+    display: block;
+    /* color: #D1D1D1; */
+    color: #ffffff50;
+    animation: animate 15s linear infinite;
+    background-image: url(../img/freepik/title-bg.jpg);
+    background-size: cover;
+    background-clip: text;
+  }
+
+  .nav-link {
+    display: block;
+    color: #d1d1d1;
+  }
+
+  .nav-link:hover {
+    color: #0071d3;
+  }
+
+  .nav-link-highlight {
+    color: var(--color-yellow-500) !important;
+  }
+
+  .nav-link-highlight:hover {
+    color: var(--color-yellow-300) !important;
+  }
+
+  .nav-user {
+    display: block;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-yellow-300);
+  }
+
+  .text-highlight {
+    color: #0071d3;
+    font-weight: 700;
+  }
+
+  .component-highlight {
+    background-color: #0071d3;
+    font-weight: 700;
+    color: white;
+  }
+
+  .component-highlight:hover {
+    background-color: #005bb5;
+  }
+
+  #introduction-section {
+    background-image: url(../img/freepik/3585139_66096.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #d1e7f5;
+  }
+
+  .form-label {
+    text-align: left;
+    font-weight: bold;
+    color: #475569;
+    align-self: center;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+  }
+
+  @media (min-width: 768px) {
+    .form-label {
+      text-align: right;
+    }
+  }
+
+  .form-input {
+    width: 100%;
+    background-color: #f8fafc;
+    border: 2px solid #f1f5f9;
+    color: #1e293b;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    outline: none;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+
+  .form-input::placeholder {
+    color: #94a3b8;
+  }
+
+  .form-input:focus {
+    background-color: #ffffff;
+    border-color: #0071d3;
+    box-shadow: 0 0 0 4px rgb(59 130 246 / 0.1);
+  }
+}

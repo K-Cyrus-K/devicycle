@@ -1,0 +1,85 @@
+.input {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: border-color 0.3s;
+}
+
+.input::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #303234;
+  z-index: -1;
+  transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.input:focus-within::before {
+  width: 100%;
+}
+
+.input input {
+  background-color: transparent;
+  position: relative;
+  z-index: 2;
+  color: #1e293b;
+  transition:
+    color 0.3s ease-in-out 0.2s,
+    caret-color 0.3s ease-in-out 0.2s;
+}
+
+.input:focus-within input {
+  color: #ffffff;
+  caret-color: #ffffff;
+  transition-delay: 0.1s;
+}
+
+.input:focus-within input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.3s ease-in-out 0.1s;
+}
+
+.input img {
+  position: relative;
+  z-index: 2;
+  opacity: 1;
+  filter: brightness(1);
+  transition:
+    opacity 0.3s ease-in-out 0.2s,
+    filter 0.3s ease-in-out 0.2s;
+}
+
+.input:focus-within img {
+  opacity: 0.8;
+  filter: brightness(0.9);
+  transition-delay: 0.1s;
+}
+
+.input:focus-within {
+  border-color: #0071d3;
+  animation: smoothGlow 2s infinite ease-in-out;
+}
+
+@keyframes smoothGlow {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 113, 211, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(0, 113, 211, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 5px rgba(0, 113, 211, 0.2);
+  }
+}
+
+@keyframes animate {
+  to {
+    background-position-x: -500px;
+  }
+}
